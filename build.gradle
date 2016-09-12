@@ -13,11 +13,24 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'spring-boot'
+apply plugin: 'idea'
 
 jar {
 	baseName = 'webshop'
 	version = '0.0.1-SNAPSHOT'
 }
+
+configurations {
+	provided
+	provided.extendsFrom(compile)
+}
+
+idea {
+	module {
+		jdkName = '1.8'
+	}
+}
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
